@@ -9,7 +9,6 @@
  * @param {number} delayInMilliseconds
  * @returns {Promise<void>}
  */
-console.log("testststsssssssssssssssssss");
 function test() {
   window.alert("test");
 }
@@ -121,7 +120,6 @@ const sampleProperties = [
  */
 async function fetchProperties({ address, propertyType }) {
   await wait(randomInteger(500));
-
   if (typeof address !== "string" || address.trim() === "") {
     throw new Error("`address` must be provided");
   }

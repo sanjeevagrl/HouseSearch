@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let news of searchProperties$ | async">
           <th>
             <input class="form-check-input" type="checkbox" />
           </th>
