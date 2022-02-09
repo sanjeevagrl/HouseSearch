@@ -1,0 +1,22 @@
+* {
+  /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* Because we want header to be sticky later */
+  height: 6.6rem;
+  margin: 0 4.8rem;
+}
+.logo {
+  height: 7.2rem;
+}
+.searchReasult {
+  width: 50%;
+  margin: 0 auto;
+}
