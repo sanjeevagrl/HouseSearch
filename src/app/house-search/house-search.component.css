@@ -3,9 +3,17 @@
   margin: 0;
   padding: 0;
 }
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
 
@@ -16,7 +24,62 @@
 .logo {
   height: 7.2rem;
 }
-.searchReasult {
-  width: 50%;
-  margin: 0 auto;
+
+.inner-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+tr {
+  text-align: center;
+}
+.search-Result {
+  background-color: aliceblue;
+}
+
+.dispaly-None {
+  display: none;
+}
+.selected-Result {
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+.product-Type {
+  background-color: aliceblue;
+  width: 13rem;
+}
+.hearder-Text {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.75;
+  text-align: initial;
+}
+.table-Filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selected-Result th {
+  width: 25%;
+}
+.search-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.result-Section {
+  width: 100%;
+}
+.yellow-Button {
+  background-color: #ffdb43;
+  color: black;
+}
+.property-Type {
+  align-self: flex-end;
 }

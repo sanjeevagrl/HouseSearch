@@ -1,8 +1,18 @@
 export interface PropertiesListEntry {
-  id: string;
+  id?: string;
   address: string;
-  postcode: number;
-  propertyType: string;
+  postcode: string;
+  propertyType?: string;
   numberOfRooms?: number;
   floorArea?: number;
+  check?: boolean;
+}
+export interface PropertiesListType {
+  label: string;
+  value: string;
+}
+
+export interface PropertiesSearchInput {
+  address: string;
+  propertyType?: string;
 }

@@ -1,38 +1,143 @@
 <div class="container">
   <header class="header">
-    <a href="#">
+    <a href="#" class="col-md-4">
       <img class="logo" alt="immmo logo" src="assets/immo-logo.svg" />
     </a>
     <div>
-      <h1>Property Search Tool</h1>
+      <h1 class="text-center">Property Search Tool</h1>
     </div>
   </header>
-  <button (click)="testting()">search</button>
-  <div class="searchReasult">
-    <h2>Search Result</h2>
-    <table class="search table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Address</th>
-          <th>Postcode</th>
-          <th>property type</th>
-          <th>Number of rooms</th>
-          <th>Floor area(m2)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let news of searchProperties$ | async">
-          <th>
-            <input class="form-check-input" type="checkbox" />
-          </th>
-          <td>test2</td>
-          <td>test3</td>
-          <td>test4</td>
-          <td>test5</td>
-          <td>test6</td>
-        </tr>
-      </tbody>
-    </table>
+
+  <div class="inner-container col-sm-12">
+    <div class="col-md-4 col-sm-12 property-Type">
+      <div>
+        <p class="hearderText">Property types</p>
+        <section class="product-Type">
+          <table class="table-Filter">
+            <thead>
+              <tr>
+                <th>All</th>
+                <th class="dispaly-None">id</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let type of searchPropertiesType$ | async">
+                <td>
+                  <a href="#" (click)="propertyTypeSelected(type)">{{
+                    type.label
+                  }}</a>
+                </td>
+                <td class="dispaly-None">{{ type.value }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 search-column">
+      <div class="row col-md-12">
+        <label for="search">Search</label>
+        <div style="display: flex">
+          <input
+            style="margin-right: 20px"
+            type="text"
+            class="form-control"
+            name="search"
+            id="search"
+            [(ngModel)]="searchPropertyText"
+          />
+          <button
+            class="yellow-Button btn btn-lg btn-primary"
+            (click)="searchProperty()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <div class="selected-Result">
+        <p class="hearderText">Selected properties</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Address</th>
+              <th>Postcode</th>
+              <th>Number of rooms</th>
+              <th>Floor area(m2)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let res1 of selectedProperties">
+              <td>{{ res1.address }}</td>
+              <td>{{ res1.postcode }}</td>
+              <td>{{ res1.numberOfRooms }}</td>
+              <td>{{ res1.floorArea }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="result-Section">
+        <div class="search-Result">
+          <p class="hearder-Text">Search Result</p>
+          <ng-container *ngIf="searchProperties$ | async as searchProperties">
+            <table class="search table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Address</th>
+                  <th>Postcode</th>
+                  <th>property type</th>
+                  <th>Number of rooms</th>
+                  <th>Floor area(m2)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="
+                    let res of searchProperties | filterProperty: 'detached;';
+                    let i = index
+                  "
+                >
+                  <th>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      (click)="onRowSelected(res, $event)"
+                    />
+                  </th>
+                  <td>{{ res.address }}</td>
+                  <td>{{ res.postcode }}</td>
+                  <td>{{ res.propertyType }}</td>
+                  <td>{{ res.numberOfRooms }}</td>
+                  <td>{{ res.floorArea }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-container>
+
+          <ng-template #loading>
+            <div>Loading ...</div>
+          </ng-template>
+        </div>
+      </div>
+      <div
+        class="alert alert-danger alert-dimissible"
+        style="width: 100%"
+        *ngIf="searchErrorMessage != ''"
+      >
+        <span>{{ searchErrorMessage }}</span>
+      </div>
+      <div
+        class="alert alert-danger alert-dimissible"
+        style="width: 100%"
+        *ngIf="searchResultCount <= 0"
+      >
+        <span>No Record Found</span>
+      </div>
+
+      <ng-template #loading>
+        <div>Loading ...</div>
+      </ng-template>
+    </div>
   </div>
 </div>
