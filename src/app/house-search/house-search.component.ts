@@ -24,9 +24,6 @@ export class HouseSearchComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // this.propertySearchResult().then((data: any) => console.log(data));
-    // this.searchProperties$ = this.getpropertySearchResult({ address: '' });
-    // this.getPropertyType().then((data) => console.log('propertyType', data));
     this.searchPropertiesType$ = this.getPropertyType();
   }
   getpropertySearchResult(
@@ -54,7 +51,7 @@ export class HouseSearchComponent implements OnInit {
       return propertytype?.propertyTypes.map((data: any) => data);
     });
   }
-  gotError(error: any) {
+  gotError(error: string) {
     console.log(error);
     this.searchErrorMessage = error;
   }
