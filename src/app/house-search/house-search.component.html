@@ -37,7 +37,7 @@
     <div class="col-md-6 col-sm-12 search-column">
       <div class="row col-md-12">
         <label for="search">Search</label>
-        <div style="display: flex">
+        <div style="display: flex; margin-bottom: 2rem">
           <input
             style="margin-right: 20px"
             type="text"
@@ -54,15 +54,15 @@
           </button>
         </div>
       </div>
+      <p class="hearderText">Selected properties</p>
       <div class="selected-Result">
-        <p class="hearderText">Selected properties</p>
         <table>
           <thead>
             <tr>
               <th>Address</th>
               <th>Postcode</th>
               <th>Number of rooms</th>
-              <th>Floor area(m2)</th>
+              <th>Floor area(m²)</th>
             </tr>
           </thead>
           <tbody>
@@ -77,8 +77,8 @@
       </div>
 
       <div class="result-Section">
+        <p class="hearder-Text">Search Result</p>
         <div class="search-Result">
-          <p class="hearder-Text">Search Result</p>
           <ng-container *ngIf="searchProperties$ | async as searchProperties">
             <table class="search table">
               <thead>
@@ -88,7 +88,7 @@
                   <th>Postcode</th>
                   <th>property type</th>
                   <th>Number of rooms</th>
-                  <th>Floor area(m2)</th>
+                  <th>Floor area(m²)</th>
                 </tr>
               </thead>
               <tbody>

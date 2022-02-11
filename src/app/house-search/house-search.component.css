@@ -43,7 +43,7 @@ tr {
 .selected-Result {
   width: 100%;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   background-color: aliceblue;
   padding: 10px;
 }
