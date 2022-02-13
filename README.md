@@ -1,27 +1,57 @@
-# HouseSearch
+# HouseSearch for Available properties
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
-## Development server
+## Purpose
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The idea is to **demonstrate Angular web application **. 
 
-## Code scaffolding
+This is a responsive Angular web application to show Available properties. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+This course repository is in Angular v13:
+
+![Angular Core Deep Dive](https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png)
+
+# Installation pre-requisites
+
+IMPORTANT: Please use Node 16 (Long Term Support version).
+
+# Installing the Angular CLI
+
+With the following command the angular-cli will be installed globally in your machine:
+
+    npm install -g @angular/cli
+    
+# How To install this repository
+
+We can install the master branch using the following commands:
+
+    git clone https://github.com/sanjeevagrl/HouseSearch
+    
+    cd  HouseSearch
+    npm install
+
+# To run the Development UI Server
+
+To run the frontend part of our code, we will use the Angular CLI:
+
+    npm start
+  
+The application is visible at port 4200: [http://localhost:4200](http://localhost:4200)
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Development server
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Further help
+## Build
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
