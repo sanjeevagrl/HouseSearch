@@ -78,7 +78,8 @@ tr {
 }
 .yellow-Button {
   background-color: #ffdb43;
-  color: black;
+  color: #000;
+  padding: 11px 13px;
 }
 .property-Type {
   align-self: flex-end;
