@@ -19,7 +19,7 @@ export class HouseSearchComponent implements OnInit {
   public selectedProperties: PropertiesListEntry[] = [];
   public searchPropertyText: string = '';
   public searchErrorMessage: string = '';
-  public searchResultCount: number = 0;
+  public searchResultCount: number;
   public selectedPropertyType: string = '';
   constructor() {}
 
@@ -52,7 +52,6 @@ export class HouseSearchComponent implements OnInit {
     });
   }
   gotError(error: string) {
-    console.log(error);
     this.searchErrorMessage = error;
   }
   onRowSelected(rowData: any, event: any) {
@@ -76,7 +75,6 @@ export class HouseSearchComponent implements OnInit {
     });
   }
   searchProperty() {
-    //  console.log();
     this.searchProperties$ = this.getpropertySearchResult({
       address: this.searchPropertyText,
     });

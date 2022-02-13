@@ -49,6 +49,7 @@
           <button
             class="yellow-Button btn btn-lg btn-primary"
             (click)="searchProperty()"
+            #btn
           >
             Search
           </button>
@@ -114,10 +115,6 @@
               </tbody>
             </table>
           </ng-container>
-
-          <ng-template #loading>
-            <div>Loading ...</div>
-          </ng-template>
         </div>
       </div>
       <div
@@ -130,14 +127,10 @@
       <div
         class="alert alert-danger alert-dimissible"
         style="width: 100%"
-        *ngIf="searchResultCount <= 0"
+        *ngIf="searchResultCount <= 0 && searchErrorMessage === ''"
       >
         <span>No Record Found</span>
       </div>
-
-      <ng-template #loading>
-        <div>Loading ...</div>
-      </ng-template>
     </div>
   </div>
 </div>
