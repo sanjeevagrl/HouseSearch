@@ -34,6 +34,9 @@ We can install the master branch using the following commands:
 
 # To run the Development UI Server
 
+Api should run on https://localhost:44319/ this port
+as UI is poingting to above url to fetch the policy data
+
 To run the frontend part of our code, we will use the Angular CLI:
 
     npm start
